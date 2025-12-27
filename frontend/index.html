@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to UML Diagram Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎨 Text to UML Diagram Generator</h1>
+            <p>Transform Natural Language into Professional UML Diagrams using NLP</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <!-- Left Side: Input Section -->
+            <div class="input-section">
+                <div class="section-title">
+                    <span class="icon">📝</span>
+                    Input Text
+                </div>
+                
+                <textarea id="inputText" placeholder="Enter your text description here...
+
+Example:
+Student has name, age and email.
+Teacher has subject and experience.
+Student inherits from Person.
+Teacher inherits from Person."></textarea>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="generateDiagram()">
+                        🚀 Generate Diagram
+                    </button>
+                    <button class="btn-secondary" onclick="clearAll()">
+                        🗑️ Clear
+                    </button>
+                </div>
+
+                <div class="examples">
+                    <strong>📚 Quick Examples:</strong><br>
+                    <button class="example-btn" onclick="loadExample(1)">🎓 School System</button>
+                    <button class="example-btn" onclick="loadExample(2)">📚 Library System</button>
+                    <button class="example-btn" onclick="loadExample(3)">🛒 E-commerce</button>
+                    <button class="example-btn" onclick="loadExample(4)">🚗 Vehicle System</button>
+                </div>
+
+                <div class="tips">
+                    <h4>💡 Writing Tips:</h4>
+                    <ul>
+                        <li><strong>Classes:</strong> Use Capital letters (Student, Book, Teacher)</li>
+                        <li><strong>Attributes:</strong> "Student has name, age and email"</li>
+                        <li><strong>Inheritance:</strong> "Student inherits from Person"</li>
+                        <li><strong>Composition:</strong> "Car consists of Engine"</li>
+                        <li><strong>Aggregation:</strong> "Library contains Book"</li>
+                        <li><strong>Association:</strong> "Student uses Library"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side: Output Section -->
+            <div class="output-section">
+                <div class="section-title">
+                    <span class="icon">📊</span>
+                    UML Diagram
+                </div>
+                
+                <div id="canvas">
+                    <div class="welcome-message">
+                        <h3>👋 Welcome!</h3>
+                        <p>Click an example button or enter your own text to generate a UML diagram.</p>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #4CAF50;"></div>
+                        <span>Inheritance</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #F44336;"></div>
+                        <span>Composition</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF9800;"></div>
+                        <span>Aggregation</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #9E9E9E;"></div>
+                        <span>Association</span>
+                    </div>
+                </div>
+
+                <div id="infoPanel"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
